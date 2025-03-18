@@ -1,4 +1,5 @@
-import { Card, CardActions, CardContent, IconButton, Typography } from "@mui/material";
+import { useState } from "react";
+import { Box, Card, CardContent, Grow, IconButton, Typography } from "@mui/material";
 import { Delete as DeleteIcon, CheckCircle as CheckCircleIcon } from '@mui/icons-material';
 import { useAppDispatch } from "@/store/store";
 import { deleteTask, toggleCompleteTask } from "@/store/slices/tasksSlice";
@@ -11,22 +12,35 @@ type TaskItemProps = {
 
 const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
   const dispatch = useAppDispatch();
+  const [visible, setVisible] = useState(true);
+  const animationTime = 300;
+
+  const handleDelete = () => {
+    setVisible(false);
+
+    setTimeout(() => {
+      dispatch(deleteTask(task?.id))
+    }, animationTime)
+  }
 
   return (
-    <Card sx={styles.card}>
-      <CardContent sx={styles.cardContent}>
-        <Typography>{task.title}</Typography>
+    <Grow in={visible} timeout={animationTime}>
+      <Card sx={styles.card}>
+        <CardContent sx={styles.cardContent}>
+          <Box sx={styles.cardContainer}>
+            <IconButton onClick={() => dispatch(toggleCompleteTask(task?.id))}>
+              <CheckCircleIcon color={task?.completed ? "success" : "inherit"} />
+            </IconButton>
 
-        <IconButton aria-label="delete" size="small">
-          <DeleteIcon fontSize="inherit" onClick={() => dispatch(deleteTask(task?.id))} />
-        </IconButton>
-      </CardContent>
-      <CardActions>
-        <IconButton onClick={() => dispatch(toggleCompleteTask(task?.id))}>
-          <CheckCircleIcon color={task?.completed ? "success" : "inherit"} />
-        </IconButton>
-      </CardActions>
-    </Card>
+            <Typography>{task.title}</Typography>
+          </Box>
+
+          <IconButton aria-label="delete" size="small">
+            <DeleteIcon fontSize="inherit" onClick={() => handleDelete()} />
+          </IconButton>
+        </CardContent>
+      </Card>
+    </Grow>
   )
 }
 
