@@ -6,6 +6,7 @@ export const getTasks = async (): Promise<Task[]> => {
     const response = await jsonPlaceholderApiClient.get('todos?_limit=5');
     return response.data;
   } catch(err) {
+    console.error(err);
     throw new Error('Failed to fetch todos');
   }
 }
