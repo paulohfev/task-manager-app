@@ -17,7 +17,7 @@ const tasksSlice = createSlice({
     addTask: (state, action: PayloadAction<Task>) => {
       const exists = state.list.some((task) => task.id === action.payload.id);
       if (!exists) {
-        state.list.push(action.payload);
+        state.list.unshift(action.payload);
       }
     },
     deleteTask: (state, action: PayloadAction<number>) => {
