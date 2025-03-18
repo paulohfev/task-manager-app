@@ -1,9 +1,4 @@
 const styles = {
-  cardContent: {
-    alignItems: 'center',
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
   wrapper: {
     display: 'flex',
     flexDirection: 'column' as const,

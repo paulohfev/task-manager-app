@@ -1,7 +1,7 @@
 import jsonPlaceholderApiClient from "@/clients/jsonPlaceholderClient"
-import { TodoTask } from "@/types/TodoTask"
+import { Task } from "@/types/Task"
 
-export const getTodoTasks = async (): Promise<TodoTask[]> => {
+export const getTasks = async (): Promise<Task[]> => {
   try {
     const response = await jsonPlaceholderApiClient.get('todos?_limit=5');
     return response.data;

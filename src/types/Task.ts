@@ -1,4 +1,4 @@
-export type TodoTask = {
+export type Task = {
   userId: number;
   id: number;
   completed: boolean;
