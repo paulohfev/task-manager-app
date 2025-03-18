@@ -15,6 +15,10 @@ npm run dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the application running.
+
+## Deployed application
+Please feel free to access the application at: https://task-manager.thecodecompass.com/
+
 ---
 ### Points for improvment
 

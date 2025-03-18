@@ -3,7 +3,7 @@ import { Task } from "@/app/types/Task"
 
 export const getTasks = async (): Promise<Task[]> => {
   try {
-    const response = await jsonPlaceholderApiClient.get('todos?_limit=5');
+    const response = await jsonPlaceholderApiClient.get<Task[]>('/todos', { params: { _limit: 5 } });
     return response.data;
   } catch(err) {
     console.error(err);
