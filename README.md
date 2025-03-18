@@ -7,7 +7,7 @@ npm run install
 
 2. Create an `.env.local` file
 - Populate the values based on the `.env.local.example` file.
-- Currently, there is only one value: `NEXT_PUBLIC_JSON_PLACEHOLDER_API_URL`
+- Currently, there is only one value: `NEXT_PUBLIC_API_URL`. Give it a value of `https://jsonplaceholder.typicode.com`
 
 3. Run the development server:
 ```bash
