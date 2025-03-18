@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { Box, ToggleButton, ToggleButtonGroup } from "@mui/material";
 import TaskItem from "../TaskItem";
 import { TaskFilter } from "@/app/constants/taskFilter";
-import { useAppDispatch, useAppSelector } from "@/store/store";
-import { fetchTasks } from "@/store/slices/tasksSlice";
+import { useAppDispatch, useAppSelector } from "@/app/store/store";
+import { fetchTasks } from "@/app/store/slices/tasksSlice";
 import styles from './styles';
 
 const TaskList: React.FC = () => {

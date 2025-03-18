@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Box, Card, CardContent, Grow, IconButton, Typography } from "@mui/material";
 import { Delete as DeleteIcon, CheckCircle as CheckCircleIcon } from '@mui/icons-material';
-import { useAppDispatch } from "@/store/store";
-import { deleteTask, toggleCompleteTask } from "@/store/slices/tasksSlice";
-import { Task } from "@/types/Task";
+import { useAppDispatch } from "@/app/store/store";
+import { deleteTask, toggleCompleteTask } from "@/app/store/slices/tasksSlice";
+import { Task } from "@/app/types/Task";
 import styles from './styles';
 
 type TaskItemProps = {
@@ -36,7 +36,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
           </Box>
 
           <IconButton aria-label="delete" size="small">
-            <DeleteIcon fontSize="inherit" onClick={() => handleDelete()} />
+            <DeleteIcon color="warning" fontSize="inherit" onClick={() => handleDelete()} />
           </IconButton>
         </CardContent>
       </Card>

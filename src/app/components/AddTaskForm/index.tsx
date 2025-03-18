@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Box, Button, TextField } from "@mui/material";
-import { addTask } from "@/store/slices/tasksSlice";
-import { useAppDispatch } from "@/store/store";
-import { Task } from "@/types/Task";
+import { addTask } from "@/app/store/slices/tasksSlice";
+import { useAppDispatch } from "@/app/store/store";
+import { Task } from "@/app/types/Task";
 import styles from './styles';
 
 const AddTaskForm: React.FC = () => {

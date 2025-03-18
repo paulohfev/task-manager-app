@@ -1,5 +1,5 @@
-import jsonPlaceholderApiClient from "@/clients/jsonPlaceholderClient"
-import { Task } from "@/types/Task"
+import jsonPlaceholderApiClient from "@/app/clients/jsonPlaceholderClient"
+import { Task } from "@/app/types/Task"
 
 export const getTasks = async (): Promise<Task[]> => {
   try {

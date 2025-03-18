@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import AppTheme from "@/theme/Theme";
-import ReduxProvider from "@/store/Provider";
-import MainLayout from "@/components/MainLayout";
+import AppTheme from "@/app/theme/Theme";
+import ReduxProvider from "@/app/store/Provider";
+import MainLayout from "@/app/components/MainLayout";
 
 import "./globals.css";
 

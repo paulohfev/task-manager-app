@@ -1,5 +1,5 @@
-import { getTasks } from "@/services/taskService";
-import { Task } from "@/types/Task";
+import { getTasks } from "@/app/services/taskService";
+import { Task } from "@/app/types/Task";
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState: { list: Task[] } = {

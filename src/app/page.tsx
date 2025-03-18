@@ -1,9 +1,9 @@
 "use client"
 
 import { Box } from "@mui/material";
-import AddTaskForm from "@/components/AddTaskForm";
-import Grid from "@/components/Grid";
-import TaskList from "@/components/TaskList";
+import AddTaskForm from "@/app/components/AddTaskForm";
+import Grid from "@/app/components/Grid";
+import TaskList from "@/app/components/TaskList";
 import styles from './styles';
 
 export default function Home() {
