@@ -1,4 +1,7 @@
 const styles = {
+  card: {
+    overflow: 'visible'
+  },
   cardContent: {
     alignItems: 'center',
     display: 'flex',

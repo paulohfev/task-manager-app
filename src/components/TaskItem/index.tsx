@@ -13,7 +13,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
   const dispatch = useAppDispatch();
 
   return (
-    <Card>
+    <Card sx={styles.card}>
       <CardContent sx={styles.cardContent}>
         <Typography>{task.title}</Typography>
 

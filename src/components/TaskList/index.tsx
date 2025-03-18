@@ -1,30 +1,24 @@
 import { useEffect } from "react";
 import { Box } from "@mui/material";
-import AddTaskForm from "../AddTaskForm";
-import Grid from "../Grid";
 import TaskItem from "../TaskItem";
 import { useAppDispatch, useAppSelector } from "@/store/store";
-import { fetchTodoTasks } from "@/store/slices/tasksSlice";
+import { fetchTasks } from "@/store/slices/tasksSlice";
 import styles from './styles';
 
 const TaskList: React.FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(fetchTodoTasks());
+    dispatch(fetchTasks());
   }, [dispatch]);
-  const tasks = useAppSelector((state) => state.tasks);
+  const tasks = useAppSelector((state) => state.tasks?.list);
 
   return (
-    <Grid size={6}>
-      <Box sx={styles.wrapper}>
-        <AddTaskForm />
-
-        {tasks?.map((task) => (
-          <TaskItem key={`task-${task.id}`} task={task} />
-        ))}
-      </Box>
-    </Grid>
+    <Box sx={styles.wrapper}>
+      {tasks?.map((task) => (
+        <TaskItem key={`task-${task.id}`} task={task} />
+      ))}
+    </Box>
   );
 };
 

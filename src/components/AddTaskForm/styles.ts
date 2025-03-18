@@ -3,6 +3,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column' as const,
     gap: '16px',
+    width: '100%',
   }
 };
 

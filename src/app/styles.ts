@@ -1,8 +1,13 @@
 const styles = {
   container: {
+    alignItems: 'center',
+    display: 'flex',
+    justifyContent: 'center'
+  },
+  gridColumn: {
     display: 'flex',
     flexDirection: 'column' as const,
-    alignItems: 'center'
+    gap: '12px',
   }
 };
 
